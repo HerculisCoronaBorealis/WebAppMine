@@ -111,6 +111,7 @@ def newlikeIt(link, cookie):
     try:
         liked = requests.post('https://www.chegg.com/study/_ajax/contentfeedback/savereview',
                               headers=header, data=query)
+        print(liked.cookies)
         liked = liked.json()["httpCode"]
         return [200]
     except:
